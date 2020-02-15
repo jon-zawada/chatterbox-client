@@ -25,9 +25,9 @@ var FormView = {
     console.log(message);
     Parse.create(message);
 
-    console.log('click!');
-
-    // location.reload();
+    console.log('pre reload!');
+    // location.reload();    ///////////// DOES NOT REFRESH
+    console.log('post reload!');
 
   },
 

@@ -15,7 +15,7 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
-    
+
   },
 
   fetch: function(callback = ()=>{}) {
@@ -24,6 +24,7 @@ var App = {
       console.log(data);
 
       MessagesView.render(data);
+      RoomsView.render(data);
       callback();
 
     });
@@ -39,7 +40,5 @@ var App = {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
-
-
 
 };

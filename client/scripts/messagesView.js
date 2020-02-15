@@ -15,7 +15,7 @@ var MessagesView = {
   render: function(data) {
     var Messages = {};
     for (var i = 0; i < data.results.length; i++) {
-      Messages[data.results[i].objectId] = {username: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
+      Messages[data.results[i].objectId] = {username: data.results[i].username, text: data.results[i].text};
     }
 
     //going through each object in messages
