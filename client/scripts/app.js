@@ -22,11 +22,23 @@ var App = {
       // examine the response from the server request:
       console.log(data);
 
+
       // for (var i = 0; i < data.results.length; i++) {
       //   Messages[data.results[i].objectId] = {user: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
       // }
 
       //call MessagesView.render
+      // MessagesView.render();
+      var Messages = {};
+      for (var i = 0; i < data.results.length; i++) {
+        Messages[data.results[i].objectId] = {username: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
+      }
+
+      //going through each object in messages
+      for (var key in Messages) {
+        var div = MessageView.render(Messages[key]);
+        $('#chats').append(div);
+      }
 
       callback();
     });

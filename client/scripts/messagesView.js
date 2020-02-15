@@ -8,11 +8,18 @@ var MessagesView = {
   },
 
   render: function() {
-    // for (var i = 0; i < data.results.length; i++) {
-    //   Messages[data.results[i].objectId] = {user: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
-    // }
+    var Messages = {};
+    for (var i = 0; i < data.results.length; i++) {
+      Messages[data.results[i].objectId] = {username: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
+    }
 
-    //change orginzation of data, probably just user and text
+    //going through each object in messages
+    for (var key in Messages) {
+      var div = MessageView.render(Messages[key]);
+      $chats.append(div);
+    }
+    //call messageView.render on each object
+    //append to chats the result
 
     //create template function and pass every object(user/text)
     //through it to get our html
