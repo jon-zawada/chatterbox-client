@@ -7,7 +7,7 @@ var MessagesView = {
     //smaller individual message components/elements
   },
 
-  render: function() {
+  render: function(data) {
     var Messages = {};
     for (var i = 0; i < data.results.length; i++) {
       Messages[data.results[i].objectId] = {username: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
@@ -16,7 +16,7 @@ var MessagesView = {
     //going through each object in messages
     for (var key in Messages) {
       var div = MessageView.render(Messages[key]);
-      $chats.append(div);
+      $('#chats').append(div);
     }
     //call messageView.render on each object
     //append to chats the result
