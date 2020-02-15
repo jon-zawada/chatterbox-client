@@ -21,9 +21,12 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-      //iterate over data
-      //messageView.render() on all objects in data array
-      //
+
+      // for (var i = 0; i < data.results.length; i++) {
+      //   Messages[data.results[i].objectId] = {user: data.results[i].username, text: data.results[i].text, roomname: data.results[i].roomname};
+      // }
+
+      //call MessagesView.render
 
       callback();
     });
