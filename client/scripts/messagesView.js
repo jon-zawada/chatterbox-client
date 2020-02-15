@@ -5,6 +5,11 @@ var MessagesView = {
   initialize: function() {
     //create large component/element to store
     //smaller individual message components/elements
+    // MessagesView.refresh();
+
+    // $('.refresh').on('click', function() {
+    //   location.reload();
+    // });
   },
 
   render: function(data) {
@@ -18,13 +23,12 @@ var MessagesView = {
       var div = MessageView.render(Messages[key]);
       $('#chats').append(div);
     }
-    //call messageView.render on each object
-    //append to chats the result
+  },
 
-    //create template function and pass every object(user/text)
-    //through it to get our html
-    //append html to the DOM
-    //
-  }
+  ///////////////////////
+  // refresh: function() {
+
+  // }
+  ///////////////////////
 
 };
